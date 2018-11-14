@@ -13,7 +13,7 @@
 
 
   <actions>
-    <action id="JLink" class="JLinkGenerator" text="JLink" description="Generates JLinks">
+    <action id="JLink" class="JLinkGenerator" text="JLink" description="Generates JLinks" icon="/icons/icon.png">
       <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
       <keyboard-shortcut keymap="$default" first-keystroke="meta alt J"/>
     </action>
