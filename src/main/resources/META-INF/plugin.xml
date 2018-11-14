@@ -1,6 +1,7 @@
 <idea-plugin>
   <id>org.jetbrains</id>
   <name>JLink</name>
+  <description>Generate Links to Intellij code</description>
   <version>0.0.1</version>
   <vendor email="yoazm@jfrog.com" url="yuzlink.com">dummy</vendor>
 
