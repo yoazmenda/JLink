@@ -1,9 +1,30 @@
 plugins {
   id "org.jetbrains.intellij" version "0.3.12"
+  id "com.jfrog.bintray" version "1.8.4"
 }
+
+version='1.0.0'
 
 intellij {
   updateSinceUntilBuild false
+}
+
+artifacts {
+}
+
+bintray {
+  user = project.property('btuser')
+  key = project.property('btkey')
+  pkg {
+    repo = 'jlink'
+    name = 'jlink'
+    userOrg = 'jlink'
+    licenses = ['Apache-2.0']
+  }
+  filesSpec {
+    from "build/distributions/jlink-${project.version}.zip"
+    into "/"
+  }
 }
 
 
