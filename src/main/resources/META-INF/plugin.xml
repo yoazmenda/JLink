@@ -1,8 +1,8 @@
 <idea-plugin>
   <id>org.jetbrains</id>
-  <name>Hello Action Project</name>
+  <name>JLink</name>
   <version>0.0.1</version>
-  <vendor email="dummy" url="dummy">dummy</vendor>
+  <vendor email="yoazm@jfrog.com" url="yuzlink.com">dummy</vendor>
 
   <depends>com.intellij.modules.lang</depends>
 
@@ -10,10 +10,6 @@
   </extensions>
 
   <actions>
-    <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-      <add-to-group group-id="MainMenu" anchor="last"/>
-      <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
-    </group>
     <action id="JLink" class="JLinkGenerator" text="JLink" description="Generates JLinks">
       <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
       <keyboard-shortcut keymap="$default" first-keystroke="meta J"/>

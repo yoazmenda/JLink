@@ -1,3 +1,4 @@
+
 public class CaretCoordinates {
 
     private int line;
