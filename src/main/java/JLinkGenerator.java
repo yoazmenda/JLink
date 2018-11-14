@@ -1,5 +1,7 @@
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 
@@ -23,7 +25,16 @@ public class JLinkGenerator extends AnAction {
     }
 
     private CaretCoordinates getFileCoordinates(AnActionEvent e) {
-        return new CaretCoordinates();
+        CaretModel caretModel;
+        try {
+            caretModel = e.getData(DataKeys.CARET).getCaretModel();
+        } catch (Exception exception) {
+            return null;
+        }
+
+        int line = caretModel.getPrimaryCaret().getVisualPosition().line;
+        int col = caretModel.getPrimaryCaret().getVisualPosition().column;
+        return new CaretCoordinates(line, col);
     }
 
     private String getRelativePathToFile(AnActionEvent e) {
