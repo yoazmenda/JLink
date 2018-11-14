@@ -1,18 +1,15 @@
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.editor.CaretModel;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.impl.EditorImpl;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.roots.ProjectFileIndex;
+import com.intellij.openapi.vfs.VfsUtilCore;
+import com.intellij.openapi.vfs.VirtualFile;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class JLinkGenerator extends AnAction {
 
@@ -45,13 +42,9 @@ public class JLinkGenerator extends AnAction {
     }
 
     private String getRelativePathToFile(AnActionEvent e) {
-        final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-        Path absolutePath = Paths.get(((EditorImpl) editor).getVirtualFile().getPath());
-        Project project = e.getProject();
-        if (project == null || e.getProject().getBasePath() == null) {
-            Messages.showMessageDialog(project, "", "Can't Retrieve Project Path", Messages.getWarningIcon());
-        }
-        return Paths.get(e.getProject().getBasePath()).relativize(absolutePath).toString();
+        VirtualFile virtualFile = e.getData(LangDataKeys.PSI_FILE).getVirtualFile();
+        VirtualFile contentRootForFile = ProjectFileIndex.SERVICE.getInstance(e.getProject()).getContentRootForFile(virtualFile);
+        return VfsUtilCore.getRelativePath(virtualFile, contentRootForFile);
     }
 
     @Override

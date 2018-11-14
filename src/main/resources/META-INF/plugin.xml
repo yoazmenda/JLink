@@ -1,20 +1,21 @@
 <idea-plugin>
-  <id>org.jetbrains</id>
+  <id>org.jfrog</id>
   <name>JLink</name>
   <description>Generate Links to Intellij code</description>
   <version>0.0.1</version>
-  <vendor email="yoazm@jfrog.com" url="yuzlink.com">dummy</vendor>
+    <vendor email="yoazm@jfrog.com" url="www.jfrog.com">JFrog</vendor>
     <idea-version since-build="173.0" />
+  <version>1.0.0</version>
 
   <depends>com.intellij.modules.lang</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-  </extensions>
+  <extensions defaultExtensionNs="com.intellij"/>
+
 
   <actions>
     <action id="JLink" class="JLinkGenerator" text="JLink" description="Generates JLinks">
       <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CopyReference"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="meta J"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="meta alt J"/>
     </action>
   </actions>
 
