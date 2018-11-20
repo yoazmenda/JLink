@@ -10,4 +10,4 @@ Usage:
 Installation:
 
 Download latest release from Bintray.com:
-https://dl.bintray.com/jlink/jlink/jlink-1.0.3.zip
+https://dl.bintray.com/jlink/jlink/jlink-1.1.0.zip
