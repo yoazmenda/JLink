@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>org.jfrog</id>
   <name>JLink</name>
-  <description>Generate Links to Intellij code</description>
+  <description>Right-click anywhere in the editor and click 'JLink' to create (and copy to clipboard) a sharable link directly to the desired location in the code.</description>
   <version>0.0.1</version>
     <idea-version since-build="173.0" />
   <version>1.0.0</version>
