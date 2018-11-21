@@ -5,8 +5,8 @@
   <version>0.0.1</version>
     <idea-version since-build="173.0" />
   <version>1.0.0</version>
-  <vendor email="yoazm@jfrog.com" url="www.jfrog.com">JFrog</vendor>
-
+  <vendor email="yoazmenda@gmail.com" url="https://www.jfrog.com">JFrog</vendor>
+ 
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij"/>
