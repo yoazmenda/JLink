@@ -3,9 +3,9 @@
   <name>JLink</name>
   <description>Generate Links to Intellij code</description>
   <version>0.0.1</version>
-    <vendor email="yoazm@jfrog.com" url="www.jfrog.com">JFrog</vendor>
     <idea-version since-build="173.0" />
   <version>1.0.0</version>
+  <vendor email="yoazm@jfrog.com" url="www.jfrog.com">JFrog</vendor>
 
   <depends>com.intellij.modules.lang</depends>
 
