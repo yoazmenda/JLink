@@ -1,5 +1,5 @@
 # JLink
-Intellij plugin that enables sharing links directly into Intellij
+Intellij plugin that enables sharing links directly into Intellij editor
 
 Usage:
 
@@ -7,7 +7,16 @@ Usage:
 2. Click JLink (or use Ctrl+Alt+J)
 3. JLink is now copied to clipboard, share it with your friends
 
+
 Installation:
 
-Download latest release from Bintray.com:
-https://dl.bintray.com/jlink/jlink/jlink-1.1.3.zip
+Install directly from the IDE by searching for JLink in the plugin search box
+Or, Download latest release from Bintray.com:
+https://plugins.jetbrains.com/plugin/download?rel=true&updateId=52373
+
+
+Build & Run Locally:
+
+1. git clone https://github.com/yoazmenda/JLink
+2. cd JLink
+3. ./gradlew build runide
