@@ -10,9 +10,11 @@ Usage:
 
 Installation:
 
-Install directly from the IDE by searching for JLink in the plugin search box
-Or, Download latest release from Bintray.com:
-https://plugins.jetbrains.com/plugin/download?rel=true&updateId=52373
+1. Press ⌘, to open the Settings/Preferences dialog and then go to Plugins.
+2. Click the Install JetBrains plugin.
+3. In the dialog that opens, search for JLink.
+Press Install.
+Click OK in the Settings dialog and restart IntelliJ IDEA.
 
 
 Build & Run Locally:
