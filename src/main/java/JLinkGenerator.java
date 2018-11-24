@@ -1,11 +1,10 @@
 import com.intellij.notification.*;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.roots.ProjectFileIndex;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 
@@ -39,23 +38,23 @@ public class JLinkGenerator extends AnAction {
     }
 
     private CaretCoordinates getFileCoordinates(AnActionEvent e) {
-        CaretModel caretModel;
+        CaretModel caret;
         try {
-            caretModel = e.getData(DataKeys.CARET).getCaretModel();
+            caret = e.getData(PlatformDataKeys.CARET).getCaretModel();
         } catch (Exception exception) {
             return null;
         }
 
-        int line = caretModel.getPrimaryCaret().getLogicalPosition().line + 1;
-        int col = caretModel.getPrimaryCaret().getLogicalPosition().column + 1;
-        return new CaretCoordinates(line, col);
+        int line = caret.getPrimaryCaret().getLogicalPosition().line + 1;
+        int column = caret.getPrimaryCaret().getLogicalPosition().column + 1;
+        return new CaretCoordinates(line, column);
     }
 
     private String getRelativePathToFile(AnActionEvent e) {
         VirtualFile virtualFile = e.getData(LangDataKeys.PSI_FILE).getVirtualFile();
         VirtualFile contentRootForFile = ProjectFileIndex.SERVICE.getInstance(e.getProject()).getContentRootForFile(virtualFile);
         if (contentRootForFile == null) {
-            Notification notification = BALLOON_NOTIFIER.createNotification("JLink: Not supported operation", "Only Project Files Are Currently Supported", NotificationType.WARNING, null);
+            Notification notification = BALLOON_NOTIFIER.createNotification("JLink: Not supported operation", "Only Project Files Are Supported", NotificationType.WARNING, null);
             Notifications.Bus.notify(notification);
             return null;
         }
