@@ -2,9 +2,9 @@
   <id>org.jfrog</id>
   <name>JLink</name>
   <description>Right-click anywhere in the editor and click 'JLink' to create (and copy to clipboard) a sharable link directly to the desired location in the code.</description>
-  <version>1.1.4</version>
+  <version>1.1.5</version>
     <idea-version since-build="173.0" />
-  <version>1.1.4</version>
+  <version>1.1.5</version>
   <vendor email="yoazmenda@gmail.com" url="https://github.com/yoazmenda/JLink">JLink</vendor>
  
   <depends>com.intellij.modules.lang</depends>
